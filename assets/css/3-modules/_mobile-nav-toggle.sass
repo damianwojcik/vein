@@ -1,0 +1,29 @@
+$nav-height: 70px
+
+a.mobile-nav-toggle
+	display: none
+	position: absolute
+	right: 0
+	height: $nav-height
+	padding: 20px 20px
+	float: right
+	background-color: #3D3D3D
+	+desktop
+		display: table
+
+	.menu-bars
+		display: table-cell
+		vertical-align: middle
+
+		.menu-bar
+			display: block
+			width: 25px
+			height: 3px
+			background-color: #FFF
+			+transition(all 0.4s ease)
+
+			&:nth-child(2)
+				margin: 5px 0
+
+	&:hover
+		background-color: darken(#3D3D3D, 5%)

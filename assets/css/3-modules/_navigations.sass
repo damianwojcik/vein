@@ -1,0 +1,75 @@
+//primary(desktop navigation)
+.primary-nav
+	background-color: $red
+	font-family: $titillium
+	float: left
+	width: 71.6%
+	height: 70px
+	+desktop
+		display: none
+
+	ul
+		padding: 0 30px
+
+	li
+		display: inline-block
+		margin-right: 37px
+
+		&:last-child
+			margin-right: 0
+
+		&.current-menu-item
+		
+			a
+				box-shadow: inset 0 -4px 0 0 #FFF
+
+	a
+		display: block
+		color: #FFF
+		font-size: 16px
+		line-height: 1
+		font-weight: 700
+		text-transform: uppercase
+		padding: 27px 0
+
+		&:hover
+			box-shadow: inset 0 -4px 0 0 #FFF
+
+//footer navigation
+.footer-nav
+	float: right
+	text-transform: uppercase
+	font-size: 14px
+	color: #898989
+	width: auto
+
+	ul
+		li
+			display: inline-block
+			float: left
+			margin-right: 40px
+
+
+//mobile navigation
+.mobile-navigation
+	background-color: #3D3D3D
+	text-align: center
+	display: none
+
+	li
+		border-bottom: 1px solid rgba(255,255,255,0.1)
+
+		&:last-child
+			border-bottom: 0
+
+	a
+		display: block
+		font-size: 16px
+		color: #FFF
+		text-transform: uppercase
+		font-weight: bold
+		font-family: $titillium
+		padding: 15px 0
+
+		&:hover
+			background-color: darken(#3D3D3D, 5%)

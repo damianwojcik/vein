@@ -1,0 +1,64 @@
+.article-tile
+
+	h3
+		font-size: 18px
+		font-family: $sourcesans
+		text-transform: none
+		color: #4e4e4e
+		line-height: 1.2
+		font-weight: bold
+		margin-bottom: 10px
+		height: 42px
+		overflow: hidden
+		+mobile
+			height: auto
+			overflow: auto
+
+	.img-wrap
+		+background-img
+		height: 170px
+		position: relative
+
+		span
+			display: table
+			position: absolute
+			left: 0
+			top: 20px
+			width: 125px
+			height: 37px
+			text-align: center
+			background-color: $red
+			color: #FFF
+			font-size: 14px
+			line-height: 1
+			font-weight: bold
+			+transition( all 0.4s ease )
+
+		time
+			display: table-cell
+			vertical-align: middle
+
+	.text-wrap
+		padding: 20px 40px 25px 40px
+		position: relative
+		+transition( all 0.4s ease )
+		+desktop
+			padding: 20px 30px
+
+	//hover styles	
+	&:hover
+
+		h1
+			color: darken(#4e4e4e, 10%)
+
+		.text-wrap
+			background-color: #efefef
+
+			.triangle-top
+				border-color: transparent transparent #efefef transparent
+
+		.img-wrap
+			span
+				background-color: darken($red, 10%)
+			.read-more
+				color: darken($red, 10%)

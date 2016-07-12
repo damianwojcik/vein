@@ -1,0 +1,30 @@
+.news
+
+	h2
+		margin-bottom: 0
+
+	.wrap
+		padding: 17px 40px
+		+desktop
+			padding: 17px 30px
+
+	ul.list-articles li
+		display: inline-block
+		width: 50%
+		float: left
+		box-shadow: inset 0 -1px 0 0 #efefef, inset -1px 0 0 #efefef
+		+desktop
+			width: 100%
+			box-shadow: inset 0 -1px 0 0 #efefef
+
+		&:last-child
+			box-shadow: inset 0 -1px 0 0 #efefef
+
+	.article-tile
+		h1
+			max-height: 45px
+			overflow: hidden
+
+		.triangle-top
+			right: auto
+			left: 40px

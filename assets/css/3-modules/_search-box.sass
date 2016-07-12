@@ -1,0 +1,52 @@
+.search-box
+	float: right
+	width: 28.4%
+	background-color: #4e4e4e
+	height: 70px
+	+desktop
+		display: none
+
+	form
+		margin: 0
+		padding: 0
+
+	input
+		margin: 0
+		padding: 0
+		border: 0
+		border-radius: 0
+		float: left
+		background-color: transparent
+
+		&:hover
+			background-color: transparent
+
+	input:focus
+		border: 0
+
+	#s
+		height: 35px
+		font-size: 18px
+		line-height: 1
+		margin: 17px 0 17px 20px
+		padding: 0 15px
+		width: 180px
+		float: left
+		color: #FFF
+		&::-webkit-input-placeholder
+		   color: #8e8e8e
+		&:-moz-placeholder
+		   color: #8e8e8e
+		&::-moz-placeholder
+		   color: #8e8e8e
+		&:-ms-input-placeholder
+		   color: #8e8e8e
+
+	#searchsubmit
+		background-image: url('assets/img/icon-search.png')
+		width: 70px
+		height: 70px
+		background-position: center
+		background-repeat: no-repeat
+		text-indent: -9999px
+		float: right

@@ -1,0 +1,76 @@
+//globals for buttons
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.btn
+  display: inline-block
+  padding: 13px 15px
+  background-color: $red
+  text-transform: uppercase
+  color: #FFF
+  text-align: left
+  font-size: 14px
+  line-height: 1
+  white-space: nowrap
+  cursor: pointer
+  position: relative
+  width: 100%
+  font-weight: bold
+  +transition( all 0.4s ease )
+  +mobile
+    text-align: center
+
+  &:after
+    content: ''
+    position: absolute
+    right: 20px
+    top: 15px
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 5px 0 5px 5px
+    border-color: transparent transparent transparent #FFF
+
+
+  &:hover,
+  &:active,
+  &:focus
+    color: #FFF
+    background-color: darken($red, 10%)
+    outline: 0
+    text-decoration: none
+
+.btn.btn-gray
+  background-color: #3d3d3d
+  color: $red
+
+  &:after
+    border-color: transparent transparent transparent $red
+
+  &:hover
+    background-color: darken(#3d3d3d, 5%)
+
+
+//read-more
+span.read-more,
+a.read-more,
+a.read-more:hover
+  color: $red
+  font-size: 14px
+  font-weight: bold
+  line-height: 1
+  font-family: $sourcesans
+  text-transform: uppercase
+
+  &:after
+    content: ''
+    display: inline-block
+    position: relative
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-color: transparent transparent transparent $red;
+    margin-left: 11px

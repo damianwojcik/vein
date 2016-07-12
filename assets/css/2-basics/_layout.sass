@@ -1,0 +1,69 @@
+section,
+nav
+	display: table
+	width: 100%
+
+.container
+	width: 1170px
+	+desktop
+		width: 95%
+	+mobile
+		width: 100%
+
+.container.page-container
+	background-color: #FFF
+	-webkit-box-shadow: 5px 0px 20px -5px rgba(0, 0, 0, 0.4)
+	-moz-box-shadow: 5px 0px 20px -5px rgba(0, 0, 0, 0.4)
+	box-shadow: 5px 0px 20px -5px rgba(0, 0, 0, 0.4)
+
+.page-content
+	width: 100%
+	display: table
+
+.page-content
+	.span-left,
+		width: 55%
+		float: left
+		+desktop
+			width: 100%
+			float: none
+			border-bottom: 1px solid rgba(0,0,0,0.05)
+
+	.span-right
+		width: 45%
+		float: left
+		box-shadow: inset 1px 0 0 #ededed
+		+desktop
+			width: 100%
+			float: none
+			box-shadow: none
+			border-bottom: 1px solid rgba(0,0,0,0.05)
+
+.home .page-content
+	width: 100%
+	float: none
+
+	.span-left,
+	.span-right
+		width: 50%
+		float: left
+		+mobile
+			width: 100%
+
+.main-content
+	width: 75%
+	float: left
+	+desktop
+		width: 55%
+	+medium-handset
+		width: 100%
+
+.sidebar
+	width: 25%
+	float: left
+	+desktop
+		width: 45%
+	+medium-handset
+		width: 100%
+
+

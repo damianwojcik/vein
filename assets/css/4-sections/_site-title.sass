@@ -1,0 +1,100 @@
+//singular
+.site-title .row-tight
+	height: auto
+
+	.span-left
+		width: 100%
+		display: table
+		height: 100%
+		+background-img
+
+		h1
+			color: #FFF
+			font-weight: 700
+			font-size: 48px
+			line-height: 1.1
+			overflow: hidden
+			+mobile
+				font-size: 36px
+
+		.wrap
+			display: block
+			padding: 40px 70px
+			+desktop
+				padding: 40px 30px
+			+mobile
+				padding: 30px
+
+//home
+.home .site-title .row-tight
+	height: 255px
+	+desktop
+		height: auto
+	
+	//span-left styles
+	.span-left
+		width: 75%
+		+desktop
+			width: 100%
+
+		.wrap
+			padding: 0 70px
+			display: table-cell
+			vertical-align: middle
+			+desktop
+				display: block
+				padding: 40px 30px
+			+mobile
+				padding: 30px
+
+		h1
+			font-size: 60px
+			+desktop
+				font-size: 50px
+			+mobile
+				font-size: 36px
+
+	//span-right styles
+	.span-right
+		width: 25%
+		height: 100%
+		position: relative
+		+desktop
+			width: 100%
+
+		.wrap
+			padding: 35px 40px
+
+			p
+				font-size: 16px
+				max-height: 90px
+				overflow: hidden
+				margin-bottom: 15px
+
+
+//responsive home site-title span-right
+#site-title--span-right
+	+desktop
+		border-bottom: 1px solid rgba(0,0,0,0.05)
+		
+		p
+			margin-bottom: 30px
+		
+		.wrap
+			padding: 30px
+
+		.triangle-left
+			display: none
+
+		.btn
+			width: 50%
+
+	+mobile
+		border-bottom: 1px solid rgba(0,0,0,0.05)
+		.btn
+			width: 100%
+
+		.wrap
+			height: auto
+			overflow: auto
+
