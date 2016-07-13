@@ -16,6 +16,12 @@ ul.contact-details
 		display: block
 		margin-bottom: 12px
 
+		a
+			color: #FFF
+
+			&:hover
+				color: $red
+
 		i
 			margin-right: 13px
 
@@ -42,3 +48,85 @@ ul.list-featured
 			margin-right: 23px
 			+mobile
 				margin-right: 15px
+
+
+//list archive
+ul.list-archive
+	
+	li
+		display: table
+		width: 100%
+		border-bottom: 1px solid rgba(0,0,0,0.05)
+		padding: 20px 0
+		+transition( all 0.4s ease )
+		+desktop
+			padding: 30px
+		+mobile
+			padding: 0
+			padding-bottom: 30px
+			margin-bottom: 30px
+		+medium-mobile
+			padding-bottom: 20px
+			margin-bottom: 30px
+
+		&:hover
+			background-color: rgba(0,0,0,0.05)
+
+			.img-wrap:after
+				opacity: 0
+
+			+mobile
+				background-color: transparent
+
+			p span
+				color: $red
+
+		time
+			color: #5A5A5A
+			font-weight: bold
+			margin-bottom: 10px
+			display: block
+
+		a
+			display: table
+			width: 100%
+			height: 100%
+
+		p
+			margin-bottom: 0
+			color: #4e4e4e
+
+		.img-wrap
+			display: block
+			float: left
+			width: 25%
+			height: 175px
+			position: relative
+			+background-img
+			margin-right: 5%
+
+			&:after
+				content: ''
+				display: block
+				width: 100%
+				height: 100%
+				position: absolute
+				background-color: rgba(0,0,0,0.2)
+				opacity: 1
+				+transition( all 0.4s ease )
+
+			+desktop
+				width: 100%
+				margin-right: 0
+				margin-bottom: 20px
+				
+
+		.text-wrap
+			display: block
+			float: left
+			width: 70%
+			padding-right: 30px
+			+desktop
+				width: 100%
+				padding-right: 0
+

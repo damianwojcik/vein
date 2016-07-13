@@ -1,5 +1,5 @@
 <?php
-	$args = array('posts_per_page' => 2, 'category' => '2');
+	$args = array('posts_per_page' => 2, 'category' => '4');
 	$posts_array = get_posts( $args );
 ?>
 
@@ -9,7 +9,7 @@
 
 		<div class="wrap">
 
-			<h2>Newsy</h2>
+			<h2><?php echo get_cat_name(4);?></h2>
 
 		</div>
 		<!-- END wrap -->
@@ -28,11 +28,11 @@
 
 					<article class="article-tile">
 
-						<a href="<?php the_permalink(); ?>">
+						<!-- <a href="<?php the_permalink(); ?>"> -->
 
 							<div class="img-wrap" style="background-image: url('<?php echo $thumbnail[0]; ?>')">
 
-								<span><time><?php echo $date; ?></time></span>
+								<!-- <span><time><?php echo $date; ?></time></span> -->
 
 							</div>
 							<!-- END img-wrap -->
@@ -43,12 +43,12 @@
 
 								<h3><?php echo $title; ?></h3>
 
-								<span class="read-more">Więcej</span>
+								<!-- <span class="read-more">Więcej</span> -->
 
 							</div>
 							<!-- END text-wrap -->
 
-						</a>
+						<!-- </a> -->
 
 					</article>
 					<!-- END article-tile -->

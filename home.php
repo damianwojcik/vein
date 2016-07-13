@@ -7,7 +7,6 @@
 	$title_box_content = get_field('title_box_content', 'option');
 	$button_txt = get_field('button_txt', 'option');
 	$button_url = get_field('button_url', 'option');
-	$intro_heading = get_field('intro_heading', 'option');
 	$sidebar_boxes = get_field('sidebar_boxes', 'option');
 ?>
 
@@ -169,15 +168,38 @@
 					<h2>Skontaktuj się</h2>
 
 					<ul class="contact-details">
+
+						<?php if( have_rows('list-phones', 'option') ): ?>
+
+							<?php $i = 1; ?>
+
+							<?php while ( have_rows('list-phones', 'option') ) : the_row(); ?>
+
+								<?php $phone = get_sub_field('phone'); ?>
+								
+									<?php if($i <= 2){ ?>
+
+										<li>
+											<a href="callto:<?php echo $phone; ?>"><i class="fa fa-phone" aria-hidden="true"></i><?php echo $phone; ?></a>
+										</li>
+
+									<?php } ?>
+
+								<?php $i = $i + 1; ?>
+
+							<?php endwhile; ?>
+
+						<?php endif; ?>
+
+						<?php
+							$emails = get_field('list-emails', 'option');
+							$first_email = $emails[0];
+						?>
+
 						<li>
-							<a href="callto:+48322115014"><i class="fa fa-phone" aria-hidden="true"></i>+48 (32) 211 50 14</a>
+							<a href="mailto:<?php echo $emails[0]["email"]; ?>"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo $emails[0]["email"]; ?></a>
 						</li>
-						<li>
-							<a href="callto:+48322115014"><i class="fa fa-phone" aria-hidden="true"></i>+48 (32) 211 50 14</a>
-						</li>
-						<li>
-							<a href="mailto:vein@vein.com.pl"><i class="fa fa-envelope" aria-hidden="true"></i>vein@vein.com.pl</a>
-						</li>
+						
 					</ul>
 
 					<a class="btn btn-gray" href="<?php echo get_permalink(11); ?>">Jak dojechać</a>
@@ -185,7 +207,7 @@
 				</div>
 				<!-- END info-box -->
 
-				<a href="<?php echo get_permalink(11); ?>" class="img-box" style="background-image: url('<?php echo $thumbnail[0]; ?>')"></a>
+				<div id="map"></div>
 
 			</div>
 			<!-- END caption-banner -->

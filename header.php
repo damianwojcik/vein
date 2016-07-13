@@ -43,4 +43,4 @@
 	<!-- =================================================
 		Site Title
 	================================================== -->
-	<?php get_template_part("partials/aside", "mobilenav"); ?>
+	<?php get_template_part("partials/nav", "mobilenav"); ?>

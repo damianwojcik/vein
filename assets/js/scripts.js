@@ -18,13 +18,14 @@ jQuery(document).ready(function($){
     //init functions
     mobile_menu_functions();
     rearrange_divs_order();
+    initMap();
 
 
     //mobile menu functions
     function mobile_menu_functions() {
 
         var toggle_btn = $('.mobile-nav-toggle'),
-            menu_container = $('nav.mobile-navigation');
+            menu_container = $('.mobile-navigation');
 
         toggle_menu();
         $wind.on('resize', resize_nav_fix);
@@ -32,7 +33,7 @@ jQuery(document).ready(function($){
         function toggle_menu(){
 
             toggle_btn.on('click', function(){
-                menu_container.slideToggle();           
+                menu_container.stop().slideToggle(500);
             });
 
         }
@@ -70,6 +71,26 @@ jQuery(document).ready(function($){
 
     //add placeholder to wp searchform
     $(document).find('#searchform input').attr('placeholder', 'Wyszukaj');
+
+
+    //google map
+    function initMap() {
+
+        var myLatLng = {lat: 50.00396600000001, lng: 18.986736899999983};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Tu jesteśmy!'
+        });
+        
+    }
+
 
 
 });

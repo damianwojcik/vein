@@ -1,3 +1,5 @@
+<?php $intro_heading = get_field('intro_heading', 'option'); ?>
+
 <section class="intro">
 
 	<div class="wrap">
