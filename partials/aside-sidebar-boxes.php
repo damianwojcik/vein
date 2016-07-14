@@ -1,68 +1,56 @@
 <?php 
-
-$sidebar_boxes = get_field('sidebar_boxes', 'option'); 
-
-// $triangles = array('triangle-right','triangle-left'); 
-
-// $triangles[1]
-
+	$sidebar_boxes = get_field('sidebar_boxes', 'option'); 
+	$triangles = array('triangle-right','triangle-left'); 
 ?>
 
 <aside class="sidebar-boxes">
 
-	<?php
-		$post_id = $sidebar_boxes[0]["sidebar_box"]->ID;
-		$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'large');
-	?>
+	<?php $i = 0; ?>
 
-	<a href="<?php echo get_permalink($post_id); ?>" class="caption-banner">
+	<?php foreach( $sidebar_boxes as $sidebar_box ): ?>
 
-		<div class="info-box">
+		<?php
+			$post_id = $sidebar_box["sidebar_box"]->ID;
+			$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'large');
+			$heading = $sidebar_box["sidebar_box"]->post_title;
+		?>
 
-			<div class="triangle-right"></div>
+		<a href="<?php echo get_permalink($post_id); ?>" class="caption-banner">
 
-			<h2><?php echo $sidebar_boxes[0]["sidebar_box"]->post_title ?></h2>
+			<?php if ($i % 2 == 1){ ?>
 
-			<p>
-				<?php the_field('description', $post_id); ?>
-			</p>
+				<div class="img-box" style="background-image: url('<?php echo $thumbnail[0]; ?>')"></div>
+				
+			<?php } ?>
 
-			<div class="btn btn-gray">Więcej</div>
+			<div class="info-box">
 
-		</div>
-		<!-- END info-box -->
+				<div class="<?php echo $triangles[$i]; ?>"></div>
 
-		<div class="img-box" style="background-image: url('<?php echo $thumbnail[0]; ?>')"></div>
+				<h2><?php echo $heading; ?></h2>
 
-	</a>
-	<!-- END caption-banner -->
+				<p>
+					<?php the_field('description', $post_id); ?>
+				</p>
 
-	<?php
-		$post_id = $sidebar_boxes[1]["sidebar_box"]->ID;
-		$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'large');
-	?>
-	
-	<a href="<?php echo get_permalink($post_id); ?>" class="caption-banner">
+				<div class="btn btn-gray">Więcej</div>
 
-		<div class="img-box" style="background-image: url('<?php echo $thumbnail[0]; ?>')"></div>
+			</div>
+			<!-- END info-box -->
 
-		<div class="info-box">
+			<?php if ($i % 2 == 0){ ?>
 
-			<div class="triangle-left"></div>
+				<div class="img-box" style="background-image: url('<?php echo $thumbnail[0]; ?>')"></div>
 
-			<h2><?php echo $sidebar_boxes[1]["sidebar_box"]->post_title ?></h2>
+			<?php } ?>
 
-			<p>
-				<?php the_field('description', $post_id); ?>
-			</p>
+		</a>
+		<!-- END caption-banner -->
 
-			<div class="btn btn-gray">Więcej</div>
+		<?php $i = $i + 1; ?>
 
-		</div>
-		<!-- END info-box -->
+	<?php endforeach; ?>
 
-	</a>
-	<!-- END caption-banner -->
 
 	<div class="caption-banner">
 
@@ -114,6 +102,7 @@ $sidebar_boxes = get_field('sidebar_boxes', 'option');
 		</div>
 		<!-- END info-box -->
 
+		<!-- Google API Map -->
 		<div id="map"></div>
 
 	</div>
