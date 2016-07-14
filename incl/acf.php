@@ -36,6 +36,12 @@
 			'parent_slug'	=> 'page-options',
 		));
 
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Loga partnerów',
+			'menu_title'	=> 'Loga partnerów',
+			'parent_slug'	=> 'page-options',
+		));
+
 	}
 
 ?>

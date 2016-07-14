@@ -2,9 +2,6 @@
 	display: table
 	width: 100%
 	position: relative
-	+desktop
-		&:nth-child(2n-1) .info-box
-			background-color: lighten(#4e4e4e, 5%)
 
 	.info-box,
 	.img-box
@@ -14,10 +11,6 @@
 		position: relative
 		+mobile
 			height: auto
-
-	.img-box
-		+desktop
-			display: none
 
 	.info-box
 		+desktop
@@ -54,8 +47,3 @@
 
 		.btn.btn-gray
 			background-color: darken(#3d3d3d, 5%)
-
-	//map
-	#map
-		width: 50%
-		float: left

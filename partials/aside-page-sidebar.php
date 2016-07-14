@@ -1,44 +1,115 @@
+<?php $sidebar_boxes = get_field('sidebar_boxes', 'option'); ?>
+
 <aside class="page-sidebar">
 
-	<h1 class="offscreen">Sidebar</h1>
+	<?php
+		$post_id = $sidebar_boxes[0]["sidebar_box"]->ID;
+		$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'large');
+	?>
 
-	<div class="info-box">
+	<a href="<?php echo get_permalink($post_id); ?>" class="caption-banner">
 
-		<h2>Ciekawostki</h2>
+		<div class="info-box">
 
-		<p>
-			W roku 2009 zrealizowano inwestycję budowy stanowiska kontrolno-pomiarowego do paliw płynnych.
-		</p>
+			<div class="triangle-right"></div>
 
-		<a href="#" class="btn btn-gray">Więcej</a>
+			<h2><?php echo $sidebar_boxes[0]["sidebar_box"]->post_title ?></h2>
 
-	</div>
-	<!-- END info-box -->
+			<p>
+				<?php the_field('description', $post_id); ?>
+			</p>
 
-	<div class="info-box">
+			<div class="btn btn-gray">Więcej</div>
+
+		</div>
+		<!-- END info-box -->
+
+		<div class="img-box" style="background-image: url('<?php echo $thumbnail[0]; ?>')"></div>
+
+	</a>
+	<!-- END caption-banner -->
+
+	<?php
+		$post_id = $sidebar_boxes[1]["sidebar_box"]->ID;
+		$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'large');
+	?>
+	
+	<a href="<?php echo get_permalink($post_id); ?>" class="caption-banner">
+
+		<div class="img-box" style="background-image: url('<?php echo $thumbnail[0]; ?>')"></div>
+
+		<div class="info-box">
+
+			<div class="triangle-left"></div>
+
+			<h2><?php echo $sidebar_boxes[1]["sidebar_box"]->post_title ?></h2>
+
+			<p>
+				<?php the_field('description', $post_id); ?>
+			</p>
+
+			<div class="btn btn-gray">Więcej</div>
+
+		</div>
+		<!-- END info-box -->
+
+	</a>
+	<!-- END caption-banner -->
+
+	<div class="caption-banner">
 
 		<?php $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(11), 'large'); ?>
 
-		<h2>Skontaktuj się</h2>
+		<div class="info-box">
 
-		<ul class="contact-details">
-			<li>
-				<a href="callto:+48322115014"><i class="fa fa-phone" aria-hidden="true"></i>+48 (32) 211 50 14</a>
-			</li>
-			<li>
-				<a href="callto:+48322115014"><i class="fa fa-phone" aria-hidden="true"></i>+48 (32) 211 50 14</a>
-			</li>
-			<li>
-				<a href="mailto:vein@vein.com.pl"><i class="fa fa-envelope" aria-hidden="true"></i>vein@vein.com.pl</a>
-			</li>
-		</ul>
+			<div class="triangle-right"></div>
 
-		<a class="btn btn-gray" href="<?php echo get_permalink(11); ?>">Jak dojechać</a>
+			<h2>Skontaktuj się</h2>
+
+			<ul class="contact-details">
+
+				<?php if( have_rows('list-phones', 'option') ): ?>
+
+					<?php $i = 1; ?>
+
+					<?php while ( have_rows('list-phones', 'option') ) : the_row(); ?>
+
+						<?php $phone = get_sub_field('phone'); ?>
+						
+							<?php if($i <= 2){ ?>
+
+								<li>
+									<a href="callto:<?php echo $phone; ?>"><i class="fa fa-phone" aria-hidden="true"></i><?php echo $phone; ?></a>
+								</li>
+
+							<?php } ?>
+
+						<?php $i = $i + 1; ?>
+
+					<?php endwhile; ?>
+
+				<?php endif; ?>
+
+				<?php
+					$emails = get_field('list-emails', 'option');
+					$first_email = $emails[0];
+				?>
+
+				<li>
+					<a href="mailto:<?php echo $emails[0]["email"]; ?>"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo $emails[0]["email"]; ?></a>
+				</li>
+				
+			</ul>
+
+			<a class="btn btn-gray" href="<?php echo get_permalink(11); ?>">Jak dojechać</a>
+
+		</div>
+		<!-- END info-box -->
+
+		<div id="map"></div>
 
 	</div>
-	<!-- END info-box -->
-
-	<div id="map"></div>
+	<!-- END caption-banner -->
 
 </aside>
-<!-- END sidebar -->
+<!-- END page-sidebar -->

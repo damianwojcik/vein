@@ -1,14 +1,77 @@
 .page-sidebar
+	width: 25%
+	float: left
+	+desktop
+		width: 45%
+	+medium-handset
+		width: 100%
 
 	.img-box
-		height: 255px
-		width: 100%
-		display: block
+		display: none
 
-	.info-box:nth-child(2n)
-		background-color: #5a5a5a
+	.triangle-right
+		display: none
+
+	.triangle-left
+		display: none
+
+	.info-box
+		width: 100%
+
+		&:nth-child(2n-1)
+			background-color: lighten(#4e4e4e, 5%)
+
+			&:hover
+				background-color: darken(#4e4e4e, 5%)
 
 #map
 	width: 100%
 	height: 255px
 	background-color: #FFF
+
+//home
+.home
+	.page-sidebar
+		width: 100%
+
+.home
+
+	.caption-banner #map
+	+desktop
+		width: 100%
+
+	.img-box
+		height: 255px
+		width: 50%
+		display: block
+		float: left
+		+desktop
+			display: none
+
+	.triangle-right
+		display: block
+
+	.triangle-left
+		display: block
+
+	.info-box
+		width: 50%
+		+desktop
+			width: 100%
+
+	.caption-banner .info-box
+		background-color: #4e4e4e
+
+	.caption-banner:hover .info-box
+		background-color: darken(#4e4e4e, 5%)
+		
+	.caption-banner:nth-child(2n-1) .info-box
+		+desktop
+			background-color: lighten(#4e4e4e, 5%)
+
+	#map
+		width: 50%
+		float: left
+		+desktop
+			width: 100%
+			float: none
