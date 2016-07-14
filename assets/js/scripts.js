@@ -41,6 +41,9 @@ jQuery(document).ready(function($){
     initMap();
     swiper_logos_init();
 
+    //add placeholder to wp searchform
+    $(document).find('#searchform input').attr('placeholder', 'Wyszukaj');
+
 
     //mobile menu functions
     function mobile_menu_functions() {
@@ -48,23 +51,16 @@ jQuery(document).ready(function($){
         var toggle_btn = $('.mobile-nav-toggle'),
             menu_container = $('.mobile-navigation');
 
-        toggle_menu();
         $wind.on('resize', resize_nav_fix);
 
-        function toggle_menu(){
-
-            toggle_btn.on('click', function(){
-                menu_container.stop().slideToggle(500);
-            });
-
-        }
+     	toggle_btn.on('click', function(){
+            menu_container.stop().slideToggle(500);
+        });
 
         function resize_nav_fix(){
-            
             if (windW >= 1170) {
                 menu_container.css('display', '');
             }
-
         }
 
     }
@@ -79,7 +75,7 @@ jQuery(document).ready(function($){
             $(".page header.site-title").insertBefore(".main-content");
         }
 
-        if ($(window).width() > 1220) {
+        if ($(window).width() > 1200) {
             $("#site-title--span-right").insertAfter(".site-title .span-left");
             $("#site-title--span-right").css('width', '25%');
         }
@@ -88,11 +84,6 @@ jQuery(document).ready(function($){
             $("#site-title--span-right").insertBefore("section.intro");
         }''
     }
-
-
-    //add placeholder to wp searchform
-    $(document).find('#searchform input').attr('placeholder', 'Wyszukaj');
-
 
     //google map
     function initMap() {
@@ -142,7 +133,6 @@ jQuery(document).ready(function($){
          });
 
     }
-
 
 
 });

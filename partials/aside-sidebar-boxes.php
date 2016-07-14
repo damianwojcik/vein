@@ -1,6 +1,14 @@
-<?php $sidebar_boxes = get_field('sidebar_boxes', 'option'); ?>
+<?php 
 
-<aside class="page-sidebar">
+$sidebar_boxes = get_field('sidebar_boxes', 'option'); 
+
+// $triangles = array('triangle-right','triangle-left'); 
+
+// $triangles[1]
+
+?>
+
+<aside class="sidebar-boxes">
 
 	<?php
 		$post_id = $sidebar_boxes[0]["sidebar_box"]->ID;

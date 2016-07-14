@@ -1,6 +1,4 @@
-<?php
-	$logo = get_field('site_logo', 'option');
-?>
+<?php $logo = get_field('site_logo', 'option'); ?>
 
 <header class="site-header">
 

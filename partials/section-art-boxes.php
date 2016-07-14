@@ -5,7 +5,7 @@
 
 <?php if (!empty($posts_array)){ ?>
 
-	<section class="news">
+	<section class="art-boxes">
 
 		<div class="wrap">
 
@@ -60,6 +60,6 @@
 		</ul>
 
 	</section>
-	<!-- END section news -->
+	<!-- END section art-boxes -->
 
 <?php } // END if !empty($posts_array) ?>

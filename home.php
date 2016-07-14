@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
 <?php
-
 	$title_heading = get_field('title_heading', 'option');
 	$title_box_heading = get_field('title_box_heading', 'option');
 	$title_box_content = get_field('title_box_content', 'option');
@@ -81,9 +80,9 @@
 			<?php get_template_part("partials/section", "intro"); ?>
 
 			<!-- =================================================
-				Section news
+				Section art-boxes
 			================================================== -->
-			<?php get_template_part("partials/section", "news"); ?>
+			<?php get_template_part("partials/section", "art-boxes"); ?>
 
 
 			<!-- =================================================
@@ -102,9 +101,9 @@
 		<div class="span-right">
 
 			<!-- =================================================
-				Aside page-sidebar
+				Aside sidebar-boxes
 			================================================== -->
-			<?php get_template_part("partials/aside", "page-sidebar"); ?>
+			<?php get_template_part("partials/aside", "sidebar-boxes"); ?>
 
 		</div>
 		<!-- END span-right -->

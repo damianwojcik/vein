@@ -28,3 +28,23 @@
 	&:hover
 		.color-overlay
 			opacity: 1
+
+.gallery-photos--item.three-columns
+	width: 30.666%
+	margin-right: 4%
+	+mobile
+		width: 48%
+		margin-right: 4% !important
+	+medium-mobile
+		width: 100%
+		margin-right: 0 !important
+		height: 200px
+
+
+	&:nth-child(2n)
+		margin-right: 4%
+		+mobile
+			margin-right: 0 !important
+
+	&:nth-child(3n)
+		margin-right: 0

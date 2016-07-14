@@ -23,8 +23,8 @@
 
 
 </head>
-<body <?php body_class(); ?>>
 
+<body <?php body_class(); ?>>
 
 <div class="container page-container">
 
@@ -33,14 +33,7 @@
 	================================================== -->
 	<?php get_template_part("partials/site", "header"); ?>
 
-
 	<!-- =================================================
-		Mobile Navigation
-	================================================== -->
-	<?php get_template_part("partials/aside", "mobilenav"); ?>
-
-
-	<!-- =================================================
-		Site Title
+		Mobile navigation
 	================================================== -->
 	<?php get_template_part("partials/nav", "mobilenav"); ?>

@@ -6,6 +6,7 @@
 	$sidebar_button_url = get_field('sidebar_button_url', 'option');
 	$sidebar_select = get_field("sidebar_select");
 	$gallery_images = get_field('gallery_container');
+	$layout = get_field('layout');
 ?>
 
 
@@ -46,7 +47,7 @@
 
 							<?php foreach( $gallery_images as $image ): ?>
 
-								<a class="gallery-photos--item" rel="lightbox" href="<?php echo $image['url']; ?>">
+								<a class="gallery-photos--item <?php if($layout == '3 kolumny'){ echo "three-columns"; }?>" rel="lightbox" href="<?php echo $image['url']; ?>">
 
 									<div class="color-overlay"><i class="fa fa-search-plus" aria-hidden="true"></i></div>
 
@@ -70,7 +71,7 @@
 			<!-- =================================================
 				Span-right
 			================================================== -->
-			<?php if($sidebar_select == 'tak'){ ?>
+			<?php if($sidebar_select == 'tak' OR empty( $sidebar_select ) ){ ?>
 
 				<div class="span-right">
 
@@ -112,9 +113,9 @@
 
 
 	<!-- =================================================
-		Page Sidebar
+		Aside sidebar-boxes
 	================================================== -->
-	<?php get_template_part("partials/aside", "page-sidebar"); ?>
+	<?php get_template_part("partials/aside", "sidebar-boxes"); ?>
 
 
 </main>
