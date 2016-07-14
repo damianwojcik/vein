@@ -5,6 +5,7 @@
 	$sidebar_button_txt = get_field('sidebar_button_txt', 'option');
 	$sidebar_button_url = get_field('sidebar_button_url', 'option');
 	$sidebar_select = get_field("sidebar_select");
+	$gallery_images = get_field('gallery_container');
 ?>
 
 
@@ -37,6 +38,29 @@
 					<h1 class="offscreen"><?php the_title(); ?></h1>
 
 					<?php the_content(); ?>
+
+					<!-- BEGIN LOOP Gallery -->
+					<?php if( !empty($gallery_images) ): ?>
+
+						<div class="gallery-photos">
+
+							<?php foreach( $gallery_images as $image ): ?>
+
+								<a class="gallery-photos--item" rel="lightbox" href="<?php echo $image['url']; ?>">
+
+									<div class="color-overlay"><i class="fa fa-search-plus" aria-hidden="true"></i></div>
+
+									<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+
+								</a>
+					                
+					        <?php endforeach; ?>
+
+						</div>
+						<!-- END gallery-photos -->
+
+					<?php endif; ?>
+					<!-- END LOOP GALLERY -->
 					
 				</article>
 
