@@ -5,15 +5,16 @@
 .gallery-photos--item
 	display: inline-block
 	float: left
-	height: 150px
+	height: 200px
 	width: 48%
 	margin-right: 4%
 	margin-bottom: 4%
 	position: relative
+	
 	+medium-mobile
 		width: 100%
 		margin-right: 0
-		height: 200px
+		height: 250px
 
 	&:nth-child(2n)
 		margin-right: 0
@@ -38,7 +39,7 @@
 	+medium-mobile
 		width: 100%
 		margin-right: 0 !important
-		height: 200px
+		height: 250px
 
 
 	&:nth-child(2n)
@@ -47,4 +48,24 @@
 			margin-right: 0 !important
 
 	&:nth-child(3n)
+		margin-right: 0
+
+.gallery-photos--item.four-columns
+	width: 22%
+	margin-right: 4%
+	+desktop
+		width: 48%
+		margin-right: 4%
+
+		&:nth-child(2n)
+			margin-right: 0 !important
+
+	+mobile
+		width: 100%
+		margin-right: 0 !important
+
+	&:nth-child(2n)
+		margin-right: 4%
+
+	&:nth-child(4n)
 		margin-right: 0

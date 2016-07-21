@@ -1,9 +1,4 @@
 <?php
-	$sidebar_banner = get_field('sidebar_banner', 'option');
-	$box_title = get_field('box_title', 'option');
-	$box_content = get_field('box_content', 'option');
-	$sidebar_button_txt = get_field('sidebar_button_txt', 'option');
-	$sidebar_button_url = get_field('sidebar_button_url', 'option');
 	$sidebar_select = get_field("sidebar_select");
 	$gallery_images = get_field('gallery_container');
 	$layout = get_field('layout');
@@ -43,11 +38,16 @@
 					<!-- BEGIN LOOP Gallery -->
 					<?php if( !empty($gallery_images) ): ?>
 
+						<h2></h2>
+
 						<div class="gallery-photos">
 
 							<?php foreach( $gallery_images as $image ): ?>
 
-								<a class="gallery-photos--item <?php if($layout == '3 kolumny'){ echo "three-columns"; }?>" rel="lightbox" href="<?php echo $image['url']; ?>">
+								<a class="gallery-photos--item <?php
+									if($layout == '3 kolumny'){ echo "three-columns"; }
+									if($layout == '4 kolumny'){ echo "four-columns"; }
+								?>" rel="lightbox" href="<?php echo $image['url']; ?>">
 
 									<div class="color-overlay"><i class="fa fa-search-plus" aria-hidden="true"></i></div>
 
@@ -71,7 +71,15 @@
 			<!-- =================================================
 				Span-right
 			================================================== -->
-			<?php if($sidebar_select == 'tak' OR empty( $sidebar_select ) ){ ?>
+			<?php if($sidebar_select == 'tak' OR empty( $sidebar_select ) ){
+
+				$sidebar_banner = get_field('sidebar_banner', 'option');
+				$box_title = get_field('box_title', 'option');
+				$box_content = get_field('box_content', 'option');
+				$sidebar_button_txt = get_field('sidebar_button_txt', 'option');
+				$sidebar_button_url = get_field('sidebar_button_url', 'option');
+				
+			?>
 
 				<div class="span-right">
 

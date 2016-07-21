@@ -13,3 +13,5 @@
 	include("incl/acf.php");
 
 	include("incl/widgets.php");
+
+	include("incl/cpt.php");

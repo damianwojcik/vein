@@ -90,9 +90,9 @@
 
 
 	<!-- =================================================
-		Page Sidebar
+		Aside sidebar-boxes
 	================================================== -->
-	<?php get_template_part("partials/aside", "page-sidebar"); ?>
+	<?php get_template_part("partials/aside", "sidebar-boxes"); ?>
 
 
 </main>
