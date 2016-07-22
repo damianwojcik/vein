@@ -1,16 +1,15 @@
 .aside-article
+	+desktop
+		border-right: 1px solid rgba(0, 0, 0, 0.05)
+	+mobile
+		border-right: 0
+		border-top: 1px solid rgba(0, 0, 0, 0.05)
 
 	h2
 		font-size: 16px
 
 	p
 		margin-bottom: 30px
-
-	.btn,
-	.btn:hover
-		width: 50%
-		+tablet
-			width: 100%
 
 	.wrap
 		padding: 35px 40px
@@ -21,12 +20,13 @@
 		&:last-child
 			border-bottom: 0
 
-	.banner-wrap
-		a
-			display: block
-			
-		+desktop
-			text-align: center
+	.banner-wrap--link
+		margin-bottom: 30px
+		display: block
+		text-align: center
 
-			img
-				display: inline-block
+		img
+			display: inline-block
+			max-width: 100%
+			+desktop
+				max-height: 200px

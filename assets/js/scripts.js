@@ -82,7 +82,23 @@ jQuery(document).ready(function($){
 
         if ($(window).width() < 768) {
             $("#site-title--span-right").insertBefore("section.intro");
-        }''
+
+            //inside sidebar
+            if( $(".page-content .span-right") ){
+            	$(".page-content .span-right").insertAfter(".main-content");
+            	$(".sidebar-boxes").insertAfter(".main-content");
+        	}
+
+        }
+
+        if ($(window).width() < 600) {
+        	$(".sidebar-boxes").insertAfter(".page-content .span-right");
+        }
+
+        if ($(window).width() > 768) {
+        	$(".page-content .span-right").insertAfter(".main-content .span-left");
+        }
+
     }
 
     //google map

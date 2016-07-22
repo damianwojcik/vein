@@ -31,8 +31,8 @@
 		));
 
 		acf_add_options_sub_page(array(
-			'page_title' 	=> 'Sidebar artykułu',
-			'menu_title'	=> 'Sidebar artykułu',
+			'page_title' 	=> 'Sidebar wewnętrzny',
+			'menu_title'	=> 'Sidebar wewnętrzny',
 			'parent_slug'	=> 'page-options',
 		));
 

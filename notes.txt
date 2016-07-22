@@ -1,0 +1,6 @@
+- skrócić tekst na certyfikacje
+- sidebar wewnątrz artykułu defaultowo widoczny, page i post
+- przeskok boksa o firmie z poprawionym stylem
+- ujednolicic nazwe aside-page-sidebar zeby pasowala do home i singular
+- zoptymalizowac sidebar boksy do foreacha
+- section-news zmiana nazwy na art-boxes
