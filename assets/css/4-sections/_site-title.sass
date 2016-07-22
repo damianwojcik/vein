@@ -48,11 +48,13 @@
 				padding: 30px
 
 		h1
-			font-size: 60px
-			+desktop
-				font-size: 50px
+			font-size: 44px
 			+mobile
 				font-size: 36px
+			+small-mobile
+				font-size: 30px
+			+medium-mobile
+				font-size: 23px
 
 	//span-right styles
 	.span-right
@@ -71,6 +73,24 @@
 				overflow: hidden
 				margin-bottom: 15px
 
+			a
+				display: block
+
+				&:hover
+					img
+						opacity: 1
+						filter: grayscale(0%)
+
+				img
+					filter: grayscale(100%)
+					opacity: 0.6
+					+mobile
+						max-height: 70px
+						opacity: 1
+						filter: grayscale(0%)
+					+medium-mobile
+						max-height: 50px
+
 
 //responsive home site-title span-right
 #site-title--span-right
@@ -79,6 +99,8 @@
 		
 		p
 			margin-bottom: 30px
+			+mobile
+				margin-bottom: 15px
 		
 		.wrap
 			padding: 30px

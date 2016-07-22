@@ -2,7 +2,7 @@
 
 	<div class="row-tight">
 
-		<div class="span-left" style="background-image: url('<?= THEME_URL; ?>/assets/img/title-home-bg.jpg')">
+		<div class="span-left b-lazy" data-src="<?= THEME_URL; ?>/assets/img/title-home-bg.jpg">
 
 			<div class="wrap">
 

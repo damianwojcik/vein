@@ -23,7 +23,7 @@
 		<?php get_template_part("partials/site", "title"); ?>
 
 
-		<div class="row-tight">
+		<div class="row-tight row-content">
 
 			<!-- =================================================
 				Span-left
@@ -52,8 +52,8 @@
 
 									<div class="color-overlay"><i class="fa fa-search-plus" aria-hidden="true"></i></div>
 
-									<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-
+									<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+									
 								</a>
 					                
 					        <?php endforeach; ?>

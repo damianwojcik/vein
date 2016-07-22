@@ -55,7 +55,7 @@
 
 												<?php if( !empty($thumbnail) ){ ?>
 
-														<div class="img-wrap" style="background-image: url('<?php echo $thumbnail[0];?>')"></div>
+														<div class="img-wrap b-lazy" data-src="<?php echo $thumbnail[0];?>"></div>
 
 													<?php }else{ ?>
 

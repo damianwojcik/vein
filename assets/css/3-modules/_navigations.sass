@@ -14,9 +14,14 @@
 	li
 		display: inline-block
 		margin-right: 35px
+		position: relative
 
 		&:last-child
 			margin-right: 0
+
+		&:hover .sub-menu
+			opacity: 1
+			visibility: visible
 
 		&.current-menu-item
 		
@@ -34,6 +39,45 @@
 
 		&:hover
 			box-shadow: inset 0 -4px 0 0 #FFF
+
+	.sub-menu
+		position: absolute
+		margin: 0
+		padding: 0
+		background-color: $red
+		z-index: 999
+		top: 90px
+		left: -25px
+		opacity: 0
+		visibility: hidden
+		+transition( all 0.4s ease )
+
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: -10px
+			left: 40px
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 0 10px 10px 10px
+			border-color: transparent transparent $red transparent
+
+		li
+			display: block
+			margin: 0
+			border-bottom: 1px solid rgba(255,255,255,0.4)
+
+			&:last-child
+				border-bottom: 0
+
+			a
+				padding: 15px 60px 15px 18px
+
+				&:hover
+					box-shadow: none
+					background-color: rgba(255,255,255,0.3)
 
 //footer navigation
 .footer-nav
@@ -58,6 +102,7 @@
 
 	li
 		border-bottom: 1px solid rgba(255,255,255,0.1)
+		position: relative
 
 		&:last-child
 			border-bottom: 0
@@ -73,3 +118,37 @@
 
 		&:hover
 			background-color: darken(#3D3D3D, 5%)
+
+	.sub-menu
+		margin: 0
+		padding: 0
+		display: none
+
+		li
+			background-color: lighten(#3D3D3D, 5%)
+
+	.nav-more
+		color: #fff
+		cursor: pointer
+		display: block
+		font-family: Helvetica,sans-serif
+		font-size: 28px
+		font-weight: 400
+		line-height: 52px
+		padding: 0 25px
+		position: absolute
+		right: 0
+		top: 0
+		+transition( all 0.4s ease )
+		z-index: 9999
+		border-left: 1px solid rgba(255,255,255,0.1)
+		height: 53px
+
+		&:hover
+			background-color: rgba(255,255,255,0.05)
+
+//footer navigation
+.footer-nav
+
+	.sub-menu
+		display: none

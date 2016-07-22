@@ -13,7 +13,9 @@
 					$banner_url = get_sub_field('banner_url');
 				?>
 
-				<a href="<?php echo $banner_url; ?>"><img src="<?php echo $banner_img['url']; ?>" alt="$banner_img['alt'];"></a>
+				<a href="<?php echo $banner_url; ?>">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $banner_img['url']; ?>" alt="<?php echo $banner_img['alt']; ?>">
+				</a>
 
 			<?php endwhile; ?>
 

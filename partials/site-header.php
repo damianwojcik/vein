@@ -8,7 +8,9 @@
 
 			<h1 class="site-logo">
 			
-				<a href="<?= SITE_URL; ?>"><img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">Vein</a>
+				<a href="<?= SITE_URL; ?>">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">Vein
+				</a>
 
 			</h1>
 

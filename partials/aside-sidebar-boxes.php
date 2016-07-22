@@ -19,7 +19,7 @@
 
 			<?php if ($i % 2 == 1){ ?>
 
-				<div class="img-box" style="background-image: url('<?php echo $thumbnail[0]; ?>')"></div>
+				<div class="img-box b-lazy" data-src="<?php echo $thumbnail[0]; ?>"></div>
 				
 			<?php } ?>
 
@@ -40,7 +40,7 @@
 
 			<?php if ($i % 2 == 0){ ?>
 
-				<div class="img-box" style="background-image: url('<?php echo $thumbnail[0]; ?>')"></div>
+				<div class="img-box b-lazy" data-src="<?php echo $thumbnail[0]; ?>"></div>
 
 			<?php } ?>
 

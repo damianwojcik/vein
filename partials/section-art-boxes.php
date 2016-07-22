@@ -30,7 +30,7 @@
 
 						<!-- <a href="<?php the_permalink(); ?>"> -->
 
-							<div class="img-wrap" style="background-image: url('<?php echo $thumbnail[0]; ?>')">
+							<div class="img-wrap b-lazy" data-src="<?php echo $thumbnail[0]; ?>">
 
 								<!-- <span><time><?php echo $date; ?></time></span> -->
 

@@ -17,8 +17,8 @@
 		<div class="wrap banner-wrap">
 
 			<a href="<?php echo $first_sidebar_button_url; ?>" class="banner-wrap--link">
-			
-				<img src="<?php echo $sidebar_banner['url']; ?>" alt="<?php echo $sidebar_banner['alt']; ?>">
+				
+				<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $sidebar_banner['url']; ?>" alt="<?php echo $sidebar_banner['alt']; ?>">
 
 			</a>
 

@@ -4,9 +4,13 @@
 	$title_heading = get_field('title_heading', 'option');
 	$title_box_heading = get_field('title_box_heading', 'option');
 	$title_box_content = get_field('title_box_content', 'option');
-	$button_txt = get_field('button_txt', 'option');
-	$button_url = get_field('button_url', 'option');
+	$title_box_banner = get_field('title_box_banner', 'option');
+	$title_box_banner_link = get_field('link', $title_box_banner["ID"]);
 ?>
+
+
+<!-- flag to recognize in jQuery if is_home() -->
+<span id="homepage-flag" style="display: none"></span>
 
 
 <!-- =================================================
@@ -14,12 +18,12 @@
 ================================================== -->
 <header class="site-title">
 
-	<div class="row-tight">
+	<div class="row-tight row-content">
 
 		<!-- =================================================
 			Span-left
 		================================================== -->
-		<div class="span-left" style="background-image: url('<?= THEME_URL; ?>/assets/img/title-home-bg.jpg')">
+		<div class="span-left b-lazy" data-src="<?= THEME_URL; ?>/assets/img/title-home-bg.jpg">
 
 			<div class="wrap">
 
@@ -47,7 +51,9 @@
 					<?php echo $title_box_content; ?>
 				</p>
 
-				<a href="<?php echo $button_url; ?>" class="btn btn-red"><?php echo $button_txt; ?></a>
+				<a href="<?php echo $title_box_banner_link; ?>" target="_blank">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $title_box_banner['url']; ?>" alt="<?php echo $title_box_banner['alt']; ?>">
+				</a>
 
 			</div>
 			<!-- END wrap -->

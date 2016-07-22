@@ -1152,6 +1152,19 @@ a img.aligncenter {
   clear: both;
 }
 
+.b-lazy {
+  -webkit-transition: opacity 500ms ease-in-out;
+  -moz-transition: opacity 500ms ease-in-out;
+  -o-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+  max-width: 100%;
+  opacity: 0;
+}
+
+.b-lazy.b-loaded {
+  opacity: 1;
+}
+
 /**
  * Swiper 3.3.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -2261,10 +2274,16 @@ a.read-more:hover:after {
 .primary-nav li {
   display: inline-block;
   margin-right: 35px;
+  position: relative;
 }
 
 .primary-nav li:last-child {
   margin-right: 0;
+}
+
+.primary-nav li:hover .sub-menu {
+  opacity: 1;
+  visibility: visible;
 }
 
 .primary-nav li.current-menu-item a {
@@ -2283,6 +2302,53 @@ a.read-more:hover:after {
 
 .primary-nav a:hover {
   box-shadow: inset 0 -4px 0 0 #FFF;
+}
+
+.primary-nav .sub-menu {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  background-color: #e40c0c;
+  z-index: 999;
+  top: 90px;
+  left: -25px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.primary-nav .sub-menu:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: 40px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #e40c0c transparent;
+}
+
+.primary-nav .sub-menu li {
+  display: block;
+  margin: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.primary-nav .sub-menu li:last-child {
+  border-bottom: 0;
+}
+
+.primary-nav .sub-menu li a {
+  padding: 15px 60px 15px 18px;
+}
+
+.primary-nav .sub-menu li a:hover {
+  box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .footer-nav {
@@ -2307,6 +2373,7 @@ a.read-more:hover:after {
 
 .mobile-navigation li {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
 }
 
 .mobile-navigation li:last-child {
@@ -2325,6 +2392,44 @@ a.read-more:hover:after {
 
 .mobile-navigation a:hover {
   background-color: #303030;
+}
+
+.mobile-navigation .sub-menu {
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.mobile-navigation .sub-menu li {
+  background-color: #4a4a4a;
+}
+
+.mobile-navigation .nav-more {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-family: Helvetica,sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 52px;
+  padding: 0 25px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  z-index: 9999;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  height: 53px;
+}
+
+.mobile-navigation .nav-more:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.footer-nav .sub-menu {
+  display: none;
 }
 
 .search-box {
@@ -3253,18 +3358,24 @@ a.mobile-nav-toggle:hover {
 }
 
 .home .site-title .row-tight .span-left h1 {
-  font-size: 60px;
-}
-
-@media (max-width: 1220px) {
-  .home .site-title .row-tight .span-left h1 {
-    font-size: 50px;
-  }
+  font-size: 44px;
 }
 
 @media (max-width: 768px) {
   .home .site-title .row-tight .span-left h1 {
     font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home .site-title .row-tight .span-left h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .home .site-title .row-tight .span-left h1 {
+    font-size: 23px;
   }
 }
 
@@ -3291,6 +3402,34 @@ a.mobile-nav-toggle:hover {
   margin-bottom: 15px;
 }
 
+.home .site-title .row-tight .span-right .wrap a {
+  display: block;
+}
+
+.home .site-title .row-tight .span-right .wrap a:hover img {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.home .site-title .row-tight .span-right .wrap a img {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .home .site-title .row-tight .span-right .wrap a img {
+    max-height: 70px;
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+}
+
+@media (max-width: 400px) {
+  .home .site-title .row-tight .span-right .wrap a img {
+    max-height: 50px;
+  }
+}
+
 @media (max-width: 1220px) {
   #site-title--span-right {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -3298,6 +3437,15 @@ a.mobile-nav-toggle:hover {
   #site-title--span-right p {
     margin-bottom: 30px;
   }
+}
+
+@media (max-width: 1220px) and (max-width: 768px) {
+  #site-title--span-right p {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 1220px) {
   #site-title--span-right .wrap {
     padding: 30px;
   }
